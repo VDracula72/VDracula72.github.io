@@ -4,102 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Flower Garden</title>
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f2f5;
+            flex-direction: column;
+            background-color: #e4f7f6;
         }
 
-        #container {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+        #gallery {
             text-align: center;
-        }
-
-        header {
-            background-color: #3b5998;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 24px;
-        }
-
-        form {
             padding: 20px;
         }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
+        h1 {
+            color: #297373;
         }
 
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
+        .flower {
+            margin-top: 20px;
+            font-size: 50px;
+            color: #ff85a2;
         }
 
-        button {
-            background-color: #1877f2;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
+        p {
+            color: #297373;
+        }
+
+        #scroll-down {
+            margin-top: 30px;
+            color: #297373;
+            font-size: 24px;
             cursor: pointer;
         }
 
-        .error-message {
-            color: #ff0000;
-            margin-top: 10px;
+        #video-container {
+            margin-top: 50px;
+        }
+
+        video {
+            width: 80%;
+            max-width: 800px;
+            margin-top: 20px;
         }
     </style>
 </head>
 
 <body>
-    <div id="container">
-        <header>Login</header>
-        <form id="loginForm" action="Nexpage.html" method="pos">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+    <div id="gallery">
+        <h1>PARA SAYO MYLA KO!</h1>
+        <div class="flower">&#127802;</div>
+        <p>sakin ka nalang kasi.</p>
+        <div id="scroll-down">&#9660; Scroll Down &#9660;</div>
+    </div>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="button" onclick="validateLogin()">Login</button>
-        </form>
-        <div id="error-message" class="error-message"></div>
+    <div id="video-container">
+        <h2>Ako nalang kasi</h2>
+        <video controls>
+            <source src="videomyla.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <script>
-        function validateLogin() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            // Example: Check if the password is correct (for demonstration purposes)
-            if (password === 'mylako123') {
-                // Redirect or perform further actions upon successful login
-                alert('Login successful! Missnakita=');
-                // You can add window.location.href = 'dashboard.html'; to redirect to another page
-                window.location.href = 'Page1.html'
-            } else {
-                // Display error message for incorrect password
-                document.getElementById('error-message').innerText = 'Incorrect password. Please try again.';
-            }
-        }
+        // Add scroll functionality to move to the video section
+        document.getElementById('scroll-down').addEventListener('click', function () {
+            document.getElementById('video-container').scrollIntoView({ behavior: 'smooth' });
+        });
     </script>
 </body>
 
